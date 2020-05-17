@@ -127,4 +127,14 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'blog-home'
+# myaccount.google.com/lesssecureapps
+# accounts.google.com/DisplayUnlockCaptcha
+# myaccount.google.com/apppasswords
+# Email Settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'isd.project2020@gmail.com'
+EMAIL_HOST_PASSWORD = '1234qwer*ISDPROJECT'
+EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
