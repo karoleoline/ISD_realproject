@@ -1,11 +1,16 @@
 body {
   background: #fafafa;
-  color: #333333;
+  color: #fafafa;
   margin-top: 5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+h1, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+h2 .article-title {
+    color: ghostwhite;
+    font-size: 22px;
 }
 
 ul {
@@ -29,11 +34,15 @@ ul {
 }
 
 .content-section {
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+   background: #06213dbd;
+    padding: 10px 20px;
+    border-radius: 15px 30px;
+    margin-bottom: 20px;
+    float: left;
+    margin: 20px;
+    height: 250px;
+    width: 230px;
+  }
 }
 
 .article-title {
@@ -41,8 +50,8 @@ ul {
 }
 
 a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
+    color: #0c988d;
+    text-decoration: none;
 }
 
 .article-content {
@@ -58,11 +67,11 @@ a.article-title:hover {
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+  border-bottom: 1px solid #0c988d
 }
 
 .article-metadata a:hover {
-  color: #333;
+  color: white;
   text-decoration: none;
 }
 
@@ -81,4 +90,62 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.mr-2 {
+    color: #0c988d;
+    font-size: small;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: silver;
+}
+
+ .col-md-8 {
+     flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.text-muted {
+    color: #6c757d!important;
+    text-align: right;
+    margin: 27px;
+}
+
+nav.navbar.navbar-expand-md.navbar-light.fixed-top.justify-content-between {
+    background-color: #0c988d;
+    font-size: 16px;
+    font-family: cursive;
+    color: beige;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0,0,0,.9);
+    font-size: 30px;
+    font-style: oblique;
+}
+
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
+    color: #524e4ecc;
+    background-color: #d3d6d400;
+    border-color: #515452;
+}
+
+.btn-outline-success {
+    color: #495057c7;
+    background-color: transparent;
+    background-image: none;
+    border-color: #545b62c9;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #616562eb;
+    border-color: #575a57;
+}
+
+.btn-outline-success.focus, .btn-outline-success:focus {
+    box-shadow: 0 0 0 0.2rem #545b6224;
 }
