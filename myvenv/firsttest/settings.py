@@ -127,6 +127,11 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+#media Settings
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # myaccount.google.com/lesssecureapps
 # accounts.google.com/DisplayUnlockCaptcha
 # myaccount.google.com/apppasswords
@@ -138,3 +143,7 @@ EMAIL_HOST_PASSWORD = '1234qwer*ISDPROJECT'
 EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
+
+#redirect
+
+LOGIN_REDIRECT_URL = 'blog-home'
