@@ -33,4 +33,3 @@ def contact(request):
 
 	else:
 		return render(request, 'blog/contact.html', {})
-
