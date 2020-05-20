@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="content-section">
+  <div class="content-section regform">
       <form method="POST">
         {% csrf_token %}
-        <fieldset class="form-group">
+        <fieldset class="form-group regform">
             <legend class="border-bottom mb-4">Become a Part of the Community Now...</legend>
             {{ form|crispy }}
         </fieldset>
@@ -15,6 +15,6 @@
       </form>
       <div class="border-top pt-3">
         <small class="text-muted">
-          You already have an Account? <a class="ml-2" href="/login/">Sign In</a>
+          You already have an Account? <a class="ml-2 login" href="/login/">Sign In</a>
   </div>
 {% endblock content %}

@@ -149,3 +149,76 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.justify-content-between {
 .btn-outline-success.focus, .btn-outline-success:focus {
     box-shadow: 0 0 0 0.2rem #545b6224;
 }
+
+
+.content-section.regform {
+    background: #06213dbd;
+    border-radius: 30px 30px;
+    margin-bottom: 20px;
+    width: 60%;
+    height: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+fieldset.form-group.regform {
+    margin-top: 15px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #0c988d!important;
+}
+
+input#id_username, input#id_email, input#id_password1, input#id_password2  {
+    width: 200px;
+    border: black;
+    border-radius: 20px;
+    background-color: #0c988d;
+}
+
+.text-muted {
+    color: #d9dbdc!important;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+.btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active, .show>.btn-outline-info.dropdown-toggle {
+    color: #353535;
+    background-color: #0c988d;
+    border-color: #9f9e9e;
+}
+
+.btn-outline-info:hover {
+    color: #403b3b;
+    background-color: #0c988d;
+    border-color: #737373;
+   
+}
+
+
+button.btn.btn-outline-info {
+    color: whitesmoke;
+    border-color: #0c988d;
+}
+
+.border-top {
+    border-top: 1px solid #0c988d!important;
+    margin-top: 20px;
+}
+
+a.ml-2.login {
+    color: #0c988d;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a.ml-2.login:hover {
+    color: #f9f9f9;
+    text-decoration: none;
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+    padding-bottom: 15px;
+}
