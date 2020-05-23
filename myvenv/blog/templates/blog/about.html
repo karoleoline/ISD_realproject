@@ -3,13 +3,13 @@
 
 {% block content %}
 
-
+<div class="aboutus">
 <h1>About the Neighborhood Bulletin</h1>
-  <div class= "container">
-    Hi Friend!<br>
+  <div class= "container aboutus">
+    Hi Friend!<br/><br/>
     We are happy to welcome you on the website of the Neighborhood Bulletin.
     We started this project with the aim to connect people in their neighborhoods and help us all through these difficult times.
-    It does not matter if you are here to provide help or if you need help. We are happy to have you and hope that you find, what you are looking for.<br><br>
+    It does not matter if you are here to provide help or if you need help. We are happy to have you and hope that you find, what you are looking for.<br/><br/>
     <div class="bd-example">
       <details>
         <summary>Want to find out more?</summary><br>
@@ -20,41 +20,43 @@
     <div class="bd-example">
       <details>
         <summary>Want to be on board?</summary><br>
-        <p>We would be happy to welcome you in the community! Click <a href="../../register">here</a> to start.</p>
+        <p class="board">We would be happy to welcome you in the community! Click <a href="../../register">here</a> to start.</p>
         </details>
     </div>
   </div>
+  </div>
 
 
-  <section class="dentist-area section-padding-100-0">
+  <section class="aboutus-area section-padding-100-0">
     <div class="container">
       <div class="row">
         <!-- Section Heading -->
         <div class="col-12">
           <div class="section-heading text-center">
-            <h2>Our Team</h2>
+            <h2>Meet The Team</h2>
             <div class="line"></div>
           </div>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row teammember">
         <div class="container">
-        <!-- Social Info -->
+        <!-- Image and Info -->
+          <img class="rounded-circle img" width="300" height="300" src="{% static "effects/Gabi.jpg" %}">
+          <br/>
+          <!-- Social Info -->
           <a href="https://li.linkedin.com/in/gabriela-tsvetanova" class="social-icon si-rounded si-small si-linkedin" target="_blank">
             <i class="fab fa-linkedin fa-2x"></i>
           </a>
-        <!-- Image and Info -->
-          <img class="rounded-circle img" width="300" height="300" src="{% static "effects/Gabi.jpg" %}">
-            <h4>Gabi</h4>
+            <h4 class="text-center">Gabi</h4>
             <p>MSc Student</p>
             <div class="bd-example">
                 <details>
                   <summary>Learn more about Gabi</summary><br>
                   <ul>
-                    <li>B.Sc. of Business Administration at Universität Bayreuth</li>
+                    <li>B.Sc. of Computer Science at University of Economics Varna</li>
                     <li>M.Sc. of information Systems at Universität Liechtenstein</li>
-                    <li>Is crazy as hell</li>
+                    <li>A bit weird but a nice person (kidding) better run away from her!</li>
                   </ul>
                   </details>
             </div>
@@ -65,15 +67,16 @@
 
 
 
-      <div class="row">
+      <div class="row teammember">
         <div class="container">
+        <!-- Image and Info -->
+          <img class="rounded-circle img" width="300" height="300" src="{% static "effects/Kaan.jpg" %}">
+        <br/>
         <!-- Social Info -->
           <a href="https://ch.linkedin.com/in/aksoy-kaan-dipioglu" class="social-icon si-rounded si-small si-linkedin" target="_blank">
             <i class="fab fa-linkedin fa-2x"></i>
           </a>
-        <!-- Image and Info -->
-          <img class="rounded-circle img" width="300" height="300" src="{% static "effects/Kaan.jpg" %}">
-            <h4>Kaan</h4>
+            <h4 class="text-center">Kaan</h4>
             <p>MSc Student</p>
             <div class="bd-example">
                 <details>
@@ -89,15 +92,16 @@
 
         </div>
       </div>
-      <div class="row">
+      <div class="row teammember">
         <div class="container">
+        <!-- Image and Info -->
+          <img class="rounded-circle img" width="300" height="300" src="{% static "effects/Karo.jpg" %}">
+          <br/>
         <!-- Social Info -->
           <a href="https://www.linkedin.com/in/karoline-leo-861575169" class="social-icon si-rounded si-small si-linkedin">
             <i class="fab fa-linkedin fa-2x"></i>
            </a>
-        <!-- Image and Info -->
-          <img class="rounded-circle img" width="300" height="300" src="{% static "effects/Karo.jpg" %}">
-            <h4>Karo</h4>
+            <h4 class="text-center">Karo</h4>
             <p>MSc Student</p>
             <div class="bd-example">
                 <details>
