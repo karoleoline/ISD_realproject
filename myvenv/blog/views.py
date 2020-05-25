@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
 from django.core.mail import send_mail
+from django.views.generic import DetailView
 
 
 
@@ -10,6 +11,10 @@ def home(request):
         'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
+
+def PostDetailView(DetailView):
+    model = Post
+    template = 'post_detail.html'
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
