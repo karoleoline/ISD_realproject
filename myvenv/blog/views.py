@@ -25,7 +25,7 @@ def contact(request):
 			message_name, # subject
 			message, # message
 			message_email, # from email
-			['aksoy.dipioglu@uni.li'], # To Email
+			['isd.project2020@gmail.com'], # To Email
 			fail_silently = False
 			)
 

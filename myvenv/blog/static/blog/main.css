@@ -169,7 +169,7 @@ fieldset.form-group.regform {
     border-bottom: 1px solid #0c988d!important;
 }
 
-input#id_username, input#id_email, input#id_password1, input#id_password2  {
+input#id_username, input#id_email, input#id_password1, input#id_password2, input#id_first_name, input#id_last_name  {
     width: 200px;
     border: black;
     border-radius: 20px;
@@ -355,4 +355,9 @@ a.social-icon.si-rounded.si-small.si-linkedin {
 p.board {
     text-align: left;
     margin-left: -350px;
+}
+
+p.address {
+    text-align: left;
+    display: contents;
 }

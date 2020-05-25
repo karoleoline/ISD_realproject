@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .forms import UserRegisterForm
 
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -29,3 +30,5 @@ def editprofile(request):
         form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'login/edit_profile.html', args)
+
+
