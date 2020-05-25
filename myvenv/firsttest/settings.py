@@ -125,6 +125,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATICFILES_DIRS = 'blog/static/blog/background.jpg'
 
+#media settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # myaccount.google.com/lesssecureapps

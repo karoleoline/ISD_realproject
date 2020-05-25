@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, EditProfileForm
 
 
 def register(request):
@@ -30,5 +30,3 @@ def editprofile(request):
         form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'login/edit_profile.html', args)
-
-
