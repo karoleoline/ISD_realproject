@@ -5,16 +5,21 @@
       <div class="media">
         <img class="rounded-circle account-img" src="{{ user.userprofile.image.url }}">
         <div class="media-body">
-          <h2 class="account-heading">{{ user.username }}</h2>
-          <p class="text-secondary">{{ user.email }}</p>
-          <p>Username: {{ user }}</p>
-          <p>First name: {{ user.first_name }}</p>
-          <p>Last name: {{ user.last_name }}</p>
-          <p>Email: {{ user.email }}</p>
-          <br>
-          <br>
+          <div class="container">
+              <h1>Profile</h1>
+              <p>Username: {{ user }}</p>
+              <p>First name: {{ user.first_name }}</p>
+              <p>Last name: {{ user.last_name }}</p>
+              <p>Email: {{ user.email }}</p>
+              <p>Description: {{ user.userprofile.description }}</p>
+              <p>Phone: {{ user.userprofile.phone }}</p>
+              <p>City: {{ user.userprofile.city }}</p>
+              {% if user.userprofile.image %}
+              <img src="{{ user.userprofile.image.url }}" width="240">
+              {% endif %}
+          </div>
         <div class="media-body">
-            <a class="text-secondary"href="{% url 'editprofile' %}">Edit Profile</a>
+            <a class="text-secondary"href="{% url 'edit_profile' %}">Edit Profile</a>
 
           </div>
         </div>
