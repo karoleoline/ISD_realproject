@@ -13,7 +13,8 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Hey {username}! Welcome to the Neighborhood:)')
+            user_firstname = form.cleaned_data.get('first_name')
+            messages.success(request, f'Hey { user_firstname }! Welcome to the Neighborhood:)')
             return redirect ('blog-home')
     else:
         form = UserRegisterForm()
@@ -36,14 +37,6 @@ def edit_profile(request):
         return render(request, 'login/edit_profile.html', args)
 
 
-def view_profile(request, pk=None):
-    if pk:
-        user = User.objects.get(pk=pk)
-    else:
-        user = request.user
-    args = {'user': user}
-    return render(request, 'accounts/profile.html', args)
-
 
 def change_password(request):
     if request.method == 'POST':
@@ -59,4 +52,12 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
 
         args = {'form': form}
-        return render(request, 'accounts/change_password.html', args)
+        return render(request, 'login/change_password.html', args)
+
+def view_profile(request, pk=None):
+    if pk:
+        user = User.objects.get(pk=pk)
+    else:
+        user = request.user
+    args = {'user': user}
+    return render(request, 'login/profile.html', args)
