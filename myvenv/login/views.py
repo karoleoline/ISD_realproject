@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib import messages
 from .forms import UserRegisterForm, EditProfileForm
-
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
@@ -33,6 +37,7 @@ def edit_profile(request):
         return render(request, 'login/edit_profile.html', args)
 
 
+
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
@@ -47,7 +52,7 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
 
         args = {'form': form}
-        return render(request, 'accounts/change_password.html', args)
+        return render(request, 'login/change_password.html', args)
 
 def view_profile(request, pk=None):
     if pk:
@@ -55,4 +60,4 @@ def view_profile(request, pk=None):
     else:
         user = request.user
     args = {'user': user}
-    return render(request, 'accounts/profile.html', args)
+    return render(request, 'login/profile.html', args)
