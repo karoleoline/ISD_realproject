@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
 from django.core.mail import send_mail
-from django.views.generic import DetailView
+from django.views.generic import (DetailView,ListView)
 
 
 
@@ -12,7 +12,13 @@ def home(request):
     }
     return render(request, 'blog/home.html', context)
 
-def PostDetailView(DetailView):
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
     model = Post
     template = 'post_detail.html'
 
