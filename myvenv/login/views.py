@@ -40,14 +40,13 @@ def edit_profile(request):
 
 def change_password(request):
     if request.method == 'POST':
-        form = PasswordChangeForm(data=request.POST, user=request.user)
-
+        form = PasswordChangeForm(user=request.user, data=request.POST)
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect(reverse('accounts:view_profile'))
+            return redirect(reverse('login:view_profile'))
         else:
-            return redirect(reverse('accounts:change_password'))
+            return redirect(reverse('login:change_password'))
     else:
         form = PasswordChangeForm(user=request.user)
 
