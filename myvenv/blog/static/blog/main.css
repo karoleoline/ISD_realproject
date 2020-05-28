@@ -367,7 +367,7 @@ p.student {
 
 p.board {
     text-align: left;
-    margin-left: -350px;
+    margin-left: 0px;
 }
 
 p.address {
@@ -448,4 +448,23 @@ a.ml-2.reg:hover {
 a.text-secondary.edit {
     margin-top: 210px;
     display: block;
+}
+
+h2.farewell {
+    margin-left: 60px;
+    float: left;
+    margin-top: 40px;
+}
+
+img.logout {
+    width: 300px;
+    padding-left: 40px;
+}
+
+a.ml-2login {
+    margin-left: -35%;
+    color: teal;
+    border: 10px solid aliceblue;
+    background: aliceblue;
+    border-radius: 20px;
 }
