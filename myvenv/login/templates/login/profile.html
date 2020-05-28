@@ -1,27 +1,28 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
+    <div class="content-section profile">
       <div class="media">
         <img class="rounded-circle account-img" src="{{ user.userprofile.image.url }}">
         <div class="media-body">
-          <div class="container">
+          <div class="media-body editprofile">
+            <a class="text-secondary edit"href="{% url 'edit_profile' %}">Edit Profile</a>
+
+          </div>
+          <div class="container profile">
               <h1>Profile</h1>
-              <p>Username: {{ user }}</p>
-              <p>First name: {{ user.first_name }}</p>
-              <p>Last name: {{ user.last_name }}</p>
-              <p>Email: {{ user.email }}</p>
-              <p>Description: {{ user.userprofile.description }}</p>
-              <p>Phone: {{ user.userprofile.phone }}</p>
-              <p>City: {{ user.userprofile.city }}</p>
+              <p class="profile">Username: {{ user }}</p>
+              <p class="profile">First name: {{ user.first_name }}</p>
+              <p class="profile">Last name: {{ user.last_name }}</p>
+              <p class="profile">Email: {{ user.email }}</p>
+              <p class="profile">Description: {{ user.userprofile.description }}</p>
+              <p class="profile">Phone: {{ user.userprofile.phone }}</p>
+              <p class="profile">City: {{ user.userprofile.city }}</p>
               {% if user.userprofile.image %}
               <img src="{{ user.userprofile.image.url }}" width="240">
               {% endif %}
           </div>
-        <div class="media-body">
-            <a class="text-secondary"href="{% url 'edit_profile' %}">Edit Profile</a>
-
-          </div>
+        
         </div>
       </div>
       <!-- FORM HERE -->

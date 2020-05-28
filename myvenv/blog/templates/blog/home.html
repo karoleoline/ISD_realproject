@@ -6,11 +6,21 @@
         <div class="media-body">
           <div class="article-metadata">
             <a class="mr-2" href="{{ user.userprofile }}">{{ post.author }}</a>
-            <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <div class="thumbnail">
+                        <div class="caption">
+                            <h5>{{ post.title }}</a> </h5>
+                            <h6> <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small></h6>
+                            <p>{{ post.content|safe|linebreaks|truncatechars:25 }}</p>
+                            <p>
+                            <a href="{% url 'post-detail' post.pk %}" class="btn btn-primary" role="button">Show More</a>
+                            </p>
+                        </div>
+              </div>
           </div>
-          <h2><a class="article-title" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h2>
-          <p class="article-content">{{ post.content }}</p>
         </div>
       </article>
   {% endfor %}
+
 {% endblock content %}
+
+
