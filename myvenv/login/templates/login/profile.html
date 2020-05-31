@@ -1,30 +1,25 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section profile">
-      <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.userprofile.image.url }}">
-        <div class="media-body">
-          <div class="media-body editprofile">
-            <a class="text-secondary edit"href="{% url 'edit_profile' %}">Edit Profile</a>
-
-          </div>
-          <div class="container profile">
-              <h1>Profile</h1>
-              <p class="profile">Username: {{ user }}</p>
-              <p class="profile">First name: {{ user.first_name }}</p>
-              <p class="profile">Last name: {{ user.last_name }}</p>
-              <p class="profile">Email: {{ user.email }}</p>
-              <p class="profile">Description: {{ user.userprofile.description }}</p>
-              <p class="profile">Phone: {{ user.userprofile.phone }}</p>
-              <p class="profile">City: {{ user.userprofile.city }}</p>
-              {% if user.userprofile.image %}
-              <img src="{{ user.userprofile.image.url }}" width="240">
-              {% endif %}
-          </div>
-        
-        </div>
-      </div>
-      <!-- FORM HERE -->
+<div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img" src="{{ user.userprofile.image.url }}">
+    <div class="media-body">
+      <h2 class="account-heading">{{ user.username }}</h2>
+      <p class="text-secondary">{{ user.username }}</p>
     </div>
+  </div>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group regform">
+        <legend class="border-bottom mb-4">Profile Info</legend>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+    </fieldset>
+    <div class ="form-group">
+      <button class="btn btn-outline-info" type="submit">Update</button>
+    </div>
+  </form>
+  <a href="{% url 'reset_password' %}">Change Password</a>
+</div>
 {% endblock content %}

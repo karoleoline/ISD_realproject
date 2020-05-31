@@ -1,7 +1,9 @@
 from django.contrib import admin
 from login.models import UserProfile
 
+admin.site.register(UserProfile)
 
+"""
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'user_info', 'city', 'phone', 'website')
 
@@ -14,3 +16,4 @@ class UserProfileAdmin(admin.ModelAdmin):
         return queryset
 
     user_info.short_description = 'Info'
+"""
