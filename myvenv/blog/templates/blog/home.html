@@ -3,12 +3,13 @@
 {% block content %}
   {% for post in posts %}
     <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ post.author.userprofile.image.url }}"
         <div class="media-body">
           <div class="article-metadata">
             <a class="mr-2" href="{{ user.userprofile }}">{{ post.author }}</a>
               <div class="thumbnail">
                         <div class="caption">
-                            <h5>{{ post.title }}</a> </h5>
+                            <h5>{{ post.title }}</h5>
                             <h6> <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small></h6>
                             <p>{{ post.content|safe|linebreaks|truncatechars:25 }}</p>
                             <p>
