@@ -52,7 +52,7 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save(request)
+            form.save()
             username = form.cleaned_data.get('username')
             user_firstname = form.cleaned_data.get('first_name')
             messages.success(request, f'Hey { user_firstname }! Welcome to the Neighborhood:)')
