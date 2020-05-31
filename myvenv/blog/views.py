@@ -10,7 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def home(request):
 
     post_list = Post.objects.all()
-    paginator = Paginator(post_list, 3)  # Show 5 contacts per page
+    paginator = Paginator(post_list, 3)  # Show 3 posts per page
 
     page = request.GET.get('page')
     try:
