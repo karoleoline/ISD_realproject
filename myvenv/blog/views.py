@@ -4,14 +4,23 @@ from django.http import HttpResponse
 from .models import Post
 from django.core.mail import send_mail
 from django.views.generic import (DetailView,ListView,CreateView,UpdateView,DeleteView)
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'blog/home.html', context)
+
+    post_list = Post.objects.all()
+    paginator = Paginator(post_list, 3)  # Show 3 posts per page
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    return render(request, 'blog/home.html', {'posts': posts})
 
 class PostListView(ListView):
     model = Post
