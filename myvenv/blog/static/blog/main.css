@@ -4,17 +4,24 @@ body {
   margin-top: 5rem;
 }
 
-.site-header .navbar-nav .nav-link {
+.site-header .navbar-nav .nav-linkbar {
     color: #c3f0ec;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
-a.nav-item.nav-link {
+a.nav-item.nav-linkbar {
+    display: block;
+    padding: .05rem 0.6rem;
+}
+
+a.nav-item.nav-linkbar {
     color: #c3f0ec;
 }
 
-a.nav-item.nav-link:hover {
+a.nav-item.nav-linkbar:hover {
     color: #ffffff;
+    text-decoration: none;
+   
 }
 
 h1, h3, h4, h5, h6 {
@@ -36,16 +43,18 @@ ul {
   background-color: #5f788a;
 }
 
-.site-header .navbar-nav .nav-link {
+.site-header .navbar-nav .nav-linkbar {
   color: #c3f0ec;
 }
 
-.site-header .navbar-nav .nav-link:hover {
+.site-header .navbar-nav .nav-linkbar:hover {
   color: #ffffff;
+  text-decoration: none;
 }
 
-.site-header .navbar-nav .nav-link.active {
+.site-header .navbar-nav .nav-linkbar.active {
   font-weight: 500;
+  text-decoration: none;
 }
 
 .content-section {
@@ -467,4 +476,81 @@ a.ml-2login {
     border: 10px solid aliceblue;
     background: aliceblue;
     border-radius: 20px;
+}
+
+fieldset.form-group.newpost {
+    width: 400px;
+    height: auto;
+}
+
+.content-section.newpost {
+    width: auto;
+    height: auto;
+    margin-left: 30%;
+    border-radius: 30px;
+    margin-bottom: 40px;
+}
+
+a.btn.btn-danger.btn-sm.mt-1.mb-1.delete, a.btn.btn-secondary.btn-sm.mt-1.mb-1.update {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 10px;
+}
+
+a.btn.btn-danger.btn-sm.mt-1.mb-1.delete:hover, a.btn.btn-secondary.btn-sm.mt-1.mb-1.update:hover, button.btn.btn-outline-danger.delete:hover, a.btn.btn-outline-secondary.cancel:hover{
+    color: #fff;
+    background-color: #5a6268;
+
+}   
+
+article.media.content-section.postdetail {
+    width: auto;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    height: auto;
+}
+
+.content-section.deletepost {
+    width: auto;
+    margin: 30px 40px 40px 40px;
+}
+
+button.btn.btn-outline-danger.delete {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-left: 33%;
+}
+
+a.btn.btn-outline-secondary.cancel {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 10px;
+}
+
+a.btn.btn-primary.showmore {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    margin-left: 90px;
+    font-size: 12px;
+}
+
+a.btn.btn-primary.showmore:hover {
+    background: teal;
+    color: black;
+}
+
+a.ml-2login:hover {
+    text-decoration: none;
+    background: teal;
+    color: white;
+    border: 10px solid teal;
 }
