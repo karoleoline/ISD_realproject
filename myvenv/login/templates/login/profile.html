@@ -6,20 +6,14 @@
     <img class="rounded-circle account-img" src="{{ user.userprofile.image.url }}">
     <div class="media-body">
       <h2 class="account-heading">{{ user.username }}</h2>
-      <p class="text-secondary">{{ user.username }}</p>
+      <p class="text-secondary">{{ user.first_name }} {{ user.last_name }}</p>
+      <p class="text-secondary">{{ user.email }}</p>
     </div>
   </div>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <fieldset class="form-group regform">
-        <legend class="border-bottom mb-4">Profile Info</legend>
-        {{ u_form|crispy }}
-        {{ p_form|crispy }}
-    </fieldset>
-    <div class ="form-group">
-      <button class="btn btn-outline-info" type="submit">Update</button>
-    </div>
-  </form>
+  {% if user == request.user %}
+  <a href="{% url 'editprofile' %}">Edit Profile</a>
+  <br>
   <a href="{% url 'reset_password' %}">Change Password</a>
+  {% endif %}
 </div>
 {% endblock content %}
