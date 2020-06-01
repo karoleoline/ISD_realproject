@@ -58,14 +58,14 @@ ul {
 }
 
 .content-section {
-   background: #06213dbd;
-    padding: 10px 20px;
+    background: #06213dbd;
+    padding: 15px 25px;
     border-radius: 15px 30px;
     margin-bottom: 20px;
     float: left;
-    margin: 20px;
+    margin: 25px;
     height: 250px;
-    width: 230px;
+    width: 240px;
   }
 }
 
@@ -184,7 +184,9 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.justify-content-between {
 }
 
 fieldset.form-group.regform {
-    margin-top: 15px;
+    width: 700px;
+    margin-top: -150px;
+    margin-left: 251px;
 }
 
 .border-bottom {
@@ -554,3 +556,44 @@ a.ml-2login:hover {
     color: white;
     border: 10px solid teal;
 }
+
+.pagination.move {
+    margin-top: 300px;
+    margin-left: -102px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+
+a.move {
+    color: teal;
+}
+
+a.move:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.col-form-label {
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+
+label.col-form-label.requiredField {
+    display: contents;
+}
+
+div#div_id_email, div#div_id_image, div#div_id_last_name, div#div_id_username,div#div_id_first_name {
+    text-align: left;
+    line-height: 50px;
+}
+
+a {
+    color: teal;
+    text-decoration: none;
+   }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+   }
