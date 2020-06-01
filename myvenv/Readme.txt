@@ -1,10 +1,13 @@
 Setup using command prompt;
 
-1-make sure you are in related path in command prompt (Desktop\ISD_realproject-A.Kaan\myvenv)
+1-make sure you are in related path in command prompt
 
 2-pip install virtualenv
 
-3-Scripts\activate
+3-
+Linux & Mac: source venv/bin/activate
+
+Windows: venv\Scripts\activate
 
 4-pip install -r requirements.txt
 
@@ -16,4 +19,3 @@ Setup using command prompt;
 
 8-python manage.py runserver
 
-http://127.0.0.1:8000/blog/contact
