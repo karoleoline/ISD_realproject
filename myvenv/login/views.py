@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
-from .forms import UserRegisterForm#, EditProfileForm
+from .forms import UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
@@ -9,24 +9,40 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, UserProfileUpdateForm
 
 
-
 #profile view, login required
 @login_required
 def profile(request, username):
+
     # If no such user exists raise 404
     try:
         user = User.objects.get(username=username)
     except:
         raise Http404
 
-    # Flag that determines if we should show editable elements in template
-    editable = False
-    # Handling non authenticated user for obvious reasons
-    if request.user.is_authenticated and request.user == user:
-        editable = True
+    args = {
+        'user':  user
+        }
 
+    return render(request, 'login/profile.html', args)
 
+#register as User
+def register(request):
     if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            user_firstname = form.cleaned_data.get('first_name')
+            messages.success(request, f'Hey { user_firstname }! Welcome to the Neighborhood:)')
+            return redirect ('blog-home')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'login/register.html', {'form' : form})
+
+#edit profile (only possible with own profile)
+def edit_profile(request):
+    if request.method == 'POST':
+        user = user
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = UserProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
 
@@ -41,42 +57,13 @@ def profile(request, username):
 
     context = {
     'u_form': u_form,
-    'p_form': p_form
+    'p_form': p_form,
+    'user':  user
     }
 
-    return render(request, 'login/profile.html', context)
+    return render(request, 'login/edit_profile.html', context)
 
-#register
-
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            user_firstname = form.cleaned_data.get('first_name')
-            messages.success(request, f'Hey { user_firstname }! Welcome to the Neighborhood:)')
-            return redirect ('blog-home')
-    else:
-        form = UserRegisterForm()
-    return render(request, 'login/register.html', {'form' : form})
-
-#edit profile
-"""
-def edit_profile(request):
-    if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
-
-        if form.is_valid():
-            form.save()
-            return redirect ('profile')
-    else:
-        form = EditProfileForm(instance=request.user)
-        args = {'form': form}
-        return render(request, 'login/edit_profile.html', args)
-"""
-
-
+#change password via getting an email
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(user=request.user, data=request.POST)
@@ -92,11 +79,3 @@ def change_password(request):
 
         args = {'form': form}
         return render(request, 'login/change_password.html', args)
-
-def view_profile(request, username):
-    if pk:
-        user = User.objects.get(username=username)
-    else:
-        user = request.user
-    args = {'user': user}
-    return render(request, 'login/profile.html', args)
