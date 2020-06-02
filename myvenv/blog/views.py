@@ -10,6 +10,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def home(request):
 
     post_list = Post.objects.all()
+    query = request.GET.get('q')
+    if query:
+        post_list = post_list.filter(title__icontains=query)
     paginator = Paginator(post_list, 3)  # Show 3 posts per page
 
     page = request.GET.get('page')
