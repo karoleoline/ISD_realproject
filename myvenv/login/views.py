@@ -7,23 +7,50 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, UserProfileUpdateForm
-
+from django.http import HttpResponse, Http404
 
 #profile view, login required
 @login_required
 def profile(request, username):
 
     # If no such user exists raise 404
+    #print(username)
     try:
         user = User.objects.get(username=username)
     except:
         raise Http404
 
-    args = {
-        'user':  user
+    if username == request.user.username:
+        #print(username)
+        if request.method == 'POST':
+            u_form = UserUpdateForm(request.POST, instance=request.user)
+            p_form = UserProfileUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.profile)
+            if u_form.is_valid() and p_form.is_valid():
+                u_form.save()
+                p_form.save()
+                messages.success(request, f'Your account has been updated!')
+                return redirect('profile')
+
+        else:
+            u_form = UserUpdateForm(instance=request.user)
+            p_form = UserProfileUpdateForm(instance=request.user.userprofile)
+
+            context = {
+            'u_form': u_form,
+            'p_form': p_form
         }
 
-    return render(request, 'login/profile.html', args)
+        return render(request, 'login/edit_profile.html', context)
+
+    else:
+        args = {
+            'user':  user
+            }
+
+        return render(request, 'login/profile.html', args)
+
 
 #register as User
 def register(request):
@@ -38,11 +65,12 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'login/register.html', {'form' : form})
-
+"""
 #edit profile (only possible with own profile)
-def edit_profile(request):
+def edit_profile(request, username):
+
     if request.method == 'POST':
-        user = user
+
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = UserProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
 
@@ -57,12 +85,11 @@ def edit_profile(request):
 
     context = {
     'u_form': u_form,
-    'p_form': p_form,
-    'user':  user
+    'p_form': p_form
     }
 
     return render(request, 'login/edit_profile.html', context)
-
+"""
 #change password via getting an email
 def change_password(request):
     if request.method == 'POST':
@@ -78,4 +105,4 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
 
         args = {'form': form}
-        return render(request, 'login/change_password.html', args)
+        return render(request, 'login/reset_password.html', args)
