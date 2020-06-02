@@ -61,35 +61,11 @@ def register(request):
             username = form.cleaned_data.get('username')
             user_firstname = form.cleaned_data.get('first_name')
             messages.success(request, f'Hey { user_firstname }! Welcome to the Neighborhood:)')
-            return redirect ('blog-home')
+            return redirect ('login')
     else:
         form = UserRegisterForm()
     return render(request, 'login/register.html', {'form' : form})
-"""
-#edit profile (only possible with own profile)
-def edit_profile(request, username):
 
-    if request.method == 'POST':
-
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = UserProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
-
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f'Account updated successfully')
-            return redirect ('profile', username=username)
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = UserProfileUpdateForm(instance=request.user.userprofile)
-
-    context = {
-    'u_form': u_form,
-    'p_form': p_form
-    }
-
-    return render(request, 'login/edit_profile.html', context)
-"""
 #change password via getting an email
 def change_password(request):
     if request.method == 'POST':
