@@ -7,9 +7,9 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, UserProfileUpdateForm
+from django.http import HttpResponse, Http404
 
-
-#profile view, login required
+#profile view, login required, only the own profile can be edited
 @login_required
 def profile(request, username):
 
@@ -19,11 +19,36 @@ def profile(request, username):
     except:
         raise Http404
 
-    args = {
-        'user':  user
+    if username == request.user.username:
+
+        if request.method == 'POST':
+            u_form = UserUpdateForm(request.POST, instance=request.user)
+            p_form = UserProfileUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.profile)
+            if u_form.is_valid() and p_form.is_valid():
+                u_form.save()
+                p_form.save()
+                messages.success(request, f'Your account has been updated!')
+                return redirect('profile')
+
+        else:
+            u_form = UserUpdateForm(instance=request.user)
+            p_form = UserProfileUpdateForm(instance=request.user.userprofile)
+
+            context = {
+            'u_form': u_form,
+            'p_form': p_form
         }
 
-    return render(request, 'login/profile.html', args)
+        return render(request, 'login/edit_profile.html', context)
+
+    else:
+        args = {
+            'user':  user
+            }
+
+        return render(request, 'login/profile.html', args)
 
 #register as User
 def register(request):
@@ -39,29 +64,6 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'login/register.html', {'form' : form})
 
-#edit profile (only possible with own profile)
-def edit_profile(request):
-    if request.method == 'POST':
-        user = user
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = UserProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
-
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f'Account updated successfully')
-            return redirect ('profile', username=username)
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = UserProfileUpdateForm(instance=request.user.userprofile)
-
-    context = {
-    'u_form': u_form,
-    'p_form': p_form,
-    'user':  user
-    }
-
-    return render(request, 'login/edit_profile.html', context)
 
 #change password via getting an email
 def change_password(request):
