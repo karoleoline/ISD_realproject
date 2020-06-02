@@ -58,16 +58,16 @@ ul {
 }
 
 .content-section {
-   background: #06213dbd;
-    padding: 10px 20px;
+    background: #06213dbd;
+    padding: 15px 20px;
     border-radius: 15px 30px;
     margin-bottom: 20px;
     float: left;
     margin: 20px;
     height: 250px;
-    width: 230px;
-  }
+    width: 260px;
 }
+
 
 .article-title {
   color: #444444;
@@ -411,10 +411,11 @@ input.form-control.mr-sm-2 {
 .content-section.profile {
     width: -webkit-fill-available;
     height: auto;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 30px;
+    line-height: 30px;
 }
 
 .account-img {
@@ -545,7 +546,7 @@ a.btn.btn-primary.showmore {
 
 a.btn.btn-primary.showmore:hover {
     background: teal;
-    color: black;
+    
 }
 
 a.ml-2login:hover {
@@ -553,4 +554,83 @@ a.ml-2login:hover {
     background: teal;
     color: white;
     border: 10px solid teal;
+}
+
+.pagination {
+   
+    margin: 300px -100px 20px -20px;
+    list-style: none;
+    border-radius: .25rem;
+}
+
+a.move {
+    color: teal;
+    text-decoration: none;
+}
+
+a.move:hover {
+    color: white;
+    text-decoration: none;
+}
+
+h2.account-heading.username {
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+p.text-secondary.info {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+label.col-form-label.requiredField {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+div#div_id_first_name, div#div_id_last_name, div#div_id_email {
+    display: block;
+    text-align: left;
+    line-height: 60px;
+}
+
+input#id_image {
+    margin-top: 10px;
+}
+
+a.change {
+    margin-left: 100px;
+    margin-top: -52px;
+    display: block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: azure;
+    border: teal 1px solid;
+    width: 140px;
+    padding-left: 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-radius: 5px;
+}
+
+a.change:hover{
+    background-color: #0c988d;
+}
+
+h2.account-heading, .text-secondary {
+    margin-left: 60px
+}
+
+a {
+    color: #5c5c5d;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover{
+    color: white;
+    text-decoration: none;
 }
