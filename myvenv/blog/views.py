@@ -18,7 +18,7 @@ def home(request):
     query = request.GET.get('q')
     if query:
         post_list = post_list.filter(title__icontains=query) # searching according to title
-    paginator = Paginator(post_list, 8)  # Show 8 posts per page
+    paginator = Paginator(post_list, 6)  # Show 6 posts per page
 
     page = request.GET.get('page')
     try:
