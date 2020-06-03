@@ -56,6 +56,6 @@ See also the list of [contributors](https://github.com/karoleoline/ISD_realproje
 ## Acknowledgments
 
 * Big thanks to CoreyMs and Max Goodridge - we would have been lost without your youtube tutorials
-* Additionally, thanks to StackOverFlow because..well, because nothing would be possible without StackOverFlow
+* Additionally, thanks to StackOverFlow because...well, because nothing would be possible without StackOverFlow
 * Thanks to Frank B. and his awesome dog, which we can sometimes hear during his online lectures
 
