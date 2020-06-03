@@ -18,7 +18,7 @@ def home(request):
     query = request.GET.get('q')
     if query:
         post_list = post_list.filter(title__icontains=query) # searching according to title
-    paginator = Paginator(post_list, 8)  # Show 8 posts per page
+    paginator = Paginator(post_list, 6)  # Show 6 posts per page
 
     page = request.GET.get('page')
     try:
@@ -46,7 +46,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
 		model = Post
 		fields = ['title', 'content']
-		
+
         #Getting current logged in user.Author can create a new post
 		def form_valid(self, form):
 			form.instance.author = self.request.user #take current user and set for new post
