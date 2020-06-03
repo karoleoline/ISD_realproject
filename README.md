@@ -51,6 +51,11 @@ To start the server, execute
 ```
 python manage.py runserver
 ```
+To be able to use the admin panel, create a superuser
+
+```
+python manage.py createsuperuser
+```
 
 ## Deployment
 
