@@ -9,19 +9,18 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, UserProfileUpdateForm
 from django.http import HttpResponse, Http404
 
-#profile view, login required
+#profile view, login required, only the own profile can be edited
 @login_required
 def profile(request, username):
 
     # If no such user exists raise 404
-    #print(username)
     try:
         user = User.objects.get(username=username)
     except:
         raise Http404
-
+    # if the user visits his own profile (thus username == request.username) he can edit it, else not
     if username == request.user.username:
-        #print(username)
+
         if request.method == 'POST':
             u_form = UserUpdateForm(request.POST, instance=request.user)
             p_form = UserProfileUpdateForm(request.POST,

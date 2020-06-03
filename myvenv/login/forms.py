@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import UserProfile
 
-
+#form to register Users
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -29,18 +29,7 @@ class UserRegisterForm(UserCreationForm):
 
         return user
 
-"""
-class EditProfileForm(UserChangeForm):
-
-    class Meta:
-        model = User
-        fields = (
-            'email',
-            'first_name',
-            'last_name',
-        )
-"""
-
+#form to update Profile Information (connected with the User model)
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField(required=True)
 
@@ -53,6 +42,7 @@ class UserUpdateForm(forms.ModelForm):
             'email',
             ]
 
+#form to update the Profile picture (connected with the UserProfile model)
 class UserProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = UserProfile

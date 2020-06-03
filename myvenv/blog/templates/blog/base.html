@@ -30,9 +30,10 @@
          background-size: cover;
         }
 </style>
-
+<!-- Navigation Bar -->
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-light fixed-top justify-content-between" style ="background-color:#0c988d">
+        <!-- Navbar Left Side -->
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Neighborhood Bulletin</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,7 @@
 
             </div>
             <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
             <!-- Navbar Right Side -->

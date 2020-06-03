@@ -1,8 +1,15 @@
+<!-- Enable user to create post template form, very similar to register post form  -->
+
 {% extends "blog/base.html" %}
+
+<!--custom form templates, allows adjusting forms’ properties-->
 {% load crispy_forms_tags %}
+
+<!--inheritance of templates by using;-->
 {% block content %}
     <div class="content-section newpost">
         <form method="POST">
+            <!--In any template that uses a POST form, use the csrf_token tag -->
             {% csrf_token %}
             <fieldset class="form-group newpost">
                 <legend class="border-bottom mb-4 ">Blog Post</legend>

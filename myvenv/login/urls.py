@@ -9,7 +9,6 @@ from django.contrib.auth.views import (PasswordResetView, PasswordResetDoneView,
 urlpatterns = [
     path('register/',views.register, name='register'),
     url(r'^profile/(?P<username>[\w\-]+)/$', views.profile, name='profile'),
-    #path('profile/account/', views.edit_profile, name='editprofile'),
     path('profile/password/',PasswordResetView.as_view(), name='change-profile'),
 
 

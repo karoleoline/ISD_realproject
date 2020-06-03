@@ -1,3 +1,5 @@
+<!--Adjusting  home page & post structure and restriction and the way how to be shown-->
+
 {% extends "blog/base.html" %}
 
 {% block content %}
@@ -5,7 +7,11 @@
     <article class="media content-section">
         <div class="media-body">
           <div class="article-metadata">
+            {% if user.is_authenticated %}
             <a class="mr-2" href="{% url 'profile' username=post.author %}">{{ post.author }}</a>
+            {% else %}
+            <a class="mr-2" href="{% url 'login' %}">{{ post.author }}</a>
+            {% endif %}
               <div class="thumbnail">
                         <div class="caption">
                             <h5>{{ post.title }}</h5>
@@ -21,13 +27,13 @@
       </article>
   {% endfor %}
 
-
+<!--pagination settings for each page with searching functionality-->
      <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <div class="pagination">
+                <div class="pagination move">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                            <a href="?page={{ posts.previous_page_number }}" class="move">Previous</a>
+                          <a href="?page={{ posts.previous_page_number }}{% if request.GET.q %} &q={{ request.GET.q }}{% endif %}" class="move">Previous</a>
                         {% endif %}
 
                         <span class="current">
@@ -35,7 +41,7 @@
                         </span>
 
                         {% if posts.has_next %}
-                            <a href="?page={{ posts.next_page_number }}" class="move">Next</a>
+                          <a href="?page={{ posts.next_page_number }}{% if request.GET.q %} &q={{ request.GET.q }}{% endif %}" class="move">Next</a>
                         {% endif %}
                     </span>
                 </div>

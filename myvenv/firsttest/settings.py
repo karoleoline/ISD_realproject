@@ -122,10 +122,8 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = 'blog/static/blog/background.jpg'
 
 #media settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -135,14 +133,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 
+
+#Email Settings for form which is in the Contact Page
+#check it out below 3 links
+
 # myaccount.google.com/lesssecureapps
 # accounts.google.com/DisplayUnlockCaptcha
 # myaccount.google.com/apppasswords
-# Email Settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+
+EMAIL_HOST = 'smtp.gmail.com' #email provider using here
+EMAIL_PORT = 587 #port for gmail
 EMAIL_HOST_USER = 'isd.project2020@gmail.com'
 EMAIL_HOST_PASSWORD = '1234qwer*ISDproject'
 EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False

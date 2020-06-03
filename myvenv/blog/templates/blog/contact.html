@@ -1,5 +1,9 @@
 {% extends "blog/base.html" %}
+<!--use the literal value "base.html" as the name of the parent template to extend-->
+
 {% load static %}
+<!--Store your static files in a folder called static in your app-->
+
 {% block title %}Contact us{%endblock %}
 {% block meta_description %}This is the website of Gabi, Kaan and Kaaro  the greatest Neighborhood Bulletin!
 {% endblock %}
@@ -9,6 +13,7 @@
   <h2 class="title">Contact</h2>
   
   <!-- ***** Contact Area Start ***** -->
+<!-- After sending the form and below mesage will be shown-->
   {% if message_name %}
     <center>
       <h2>Thanks {{ message_name }}!</h2>
@@ -17,6 +22,7 @@
     <br/><br/><br/>
   {% else %}
 
+<!-- Adding map in the page.-->
   <section class="contact-area mt-50 mb-100">
     <div class="container">
       <div class="row">
@@ -33,13 +39,13 @@
         <div class="col-12 col-md-4-info">
           <div class="contact-information">
             <h5>Address</h5>
-            <p class="address">University Liechtenstein Fürst-Franz-Josef-Strasse, 9490 Vaduz, Liechtenstein,</p>
+            <p class="address">University Liechtenstein Fürst-Franz-Josef-Strasse, 9490 Vaduz, Liechtenstein</p>
 
             <h5>Phone</h5>
-            <p class="address">111 222.3333</p>
+            <p class="address">111.222.333</p>
 
             <h5>Email</h5>
-            <p class="address"">isd.project2020@gmail.com</p>
+            <p class="address">isd.project2020@gmail.com</p>
           </div>
         </div>
 
@@ -51,7 +57,9 @@
               <h2>Get In Touch</h2>
               <div class="line"></div>
             </div>
+                   
             <!-- Form -->
+            <!--when click button to send form, it will revert back to itself page-->
             <form action="{% url 'blog-contact' %}" method="post" class="contact_form">
               {% csrf_token %}
               <div class="row">
