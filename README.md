@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Please follow these instructions:
 
-Execute the following order to install Django
+First of all, a virtual environment has to be established
 
 ```
 pip install -r requirements.txt
@@ -17,12 +17,10 @@ pip install -r requirements.txt
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Execute the following order to install Django
 
 ```
-Give the example
+pip install -r requirements.txt
 ```
 
 And repeat
