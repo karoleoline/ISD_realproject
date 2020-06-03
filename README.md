@@ -3,7 +3,7 @@ This is the code for our Website 'Neighborhood Bulletin' as part of the ISD 2020
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. This website is for development prurposes only, deployment is not intended.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. This website is for development purposes only, deployment is not intended.
 
 ### Prerequisites
 
