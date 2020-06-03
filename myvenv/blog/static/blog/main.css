@@ -21,7 +21,7 @@ a.nav-item.nav-linkbar {
 a.nav-item.nav-linkbar:hover {
     color: #ffffff;
     text-decoration: none;
-   
+
 }
 
 h1, h3, h4, h5, h6 {
@@ -58,14 +58,14 @@ ul {
 }
 
 .content-section {
-   background: #06213dbd;
-    padding: 10px 20px;
+    background: #06213dbd;
+    padding: 15px 25px;
     border-radius: 15px 30px;
     margin-bottom: 20px;
     float: left;
-    margin: 20px;
+    margin: 25px;
     height: 250px;
-    width: 230px;
+    width: 240px;
   }
 }
 
@@ -113,7 +113,9 @@ a.article-title:hover {
 }
 
 .account-heading {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 50px;
 }
 
 .mr-2 {
@@ -184,7 +186,8 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.justify-content-between {
 }
 
 fieldset.form-group.regform {
-    margin-top: 15px;
+    width: 700px;
+
 }
 
 .border-bottom {
@@ -196,13 +199,14 @@ input#id_username, input#id_email, input#id_password1, input#id_password, input#
     border: black;
     border-radius: 20px;
     background-color: #0c988d;
+    margin-left: 20px;
 }
 
 .text-muted {
     color: #d9dbdc!important;
     text-align: left;
     margin-top: 10px;
-    margin-left: auto;
+    margin-left: 20px;
 }
 
 .btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active, .show>.btn-outline-info.dropdown-toggle {
@@ -215,7 +219,7 @@ input#id_username, input#id_email, input#id_password1, input#id_password, input#
     color: #403b3b;
     background-color: #0c988d;
     border-color: #737373;
-   
+
 }
 
 
@@ -451,7 +455,7 @@ a.ml-2.reg:hover {
 .media-body.editprofile {
     text-align: left;
     margin-left: -15%;
-   
+
 }
 
 a.text-secondary.edit {
@@ -502,7 +506,7 @@ a.btn.btn-danger.btn-sm.mt-1.mb-1.delete:hover, a.btn.btn-secondary.btn-sm.mt-1.
     color: #fff;
     background-color: #5a6268;
 
-}   
+}
 
 article.media.content-section.postdetail {
     width: auto;
@@ -553,4 +557,94 @@ a.ml-2login:hover {
     background: teal;
     color: white;
     border: 10px solid teal;
+}
+
+.pagination.move {
+    margin-top: 300px;
+    margin-left: -102px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+
+a.move {
+    color: teal;
+}
+
+a.move:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.col-form-label {
+    font-size: inherit;
+    line-height: 1.5;
+    margin-left: 25px;
+}
+
+
+label.col-form-label.requiredField {
+    display: flex;
+    margin-left: 20px;
+}
+
+div#div_id_email, div#div_id_image, div#div_id_last_name, div#div_id_username,div#div_id_first_name {
+    text-align: left;
+    line-height: 50px;
+}
+
+a {
+    color: teal;
+    text-decoration: none;
+   }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+   }
+
+p.text-secondary.text {
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+a.edit {
+    float: left;
+    margin-top: -40px;
+    margin-left: 235px;
+    background-color: aliceblue;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+a.change {
+    float: left;
+    margin-top: -64px;
+    margin-left: 335px;
+    background-color: aliceblue;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+a.change:hover, a.edit:hover{
+    background-color: teal;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    border-radius: 20px;
+    color: teal;
+    margin: 20px 160px;
+}
+
+input[type="submit"]:hover {
+    color: white;
+    background-color: teal;
+}
+
+input#id_email {
+    margin-left: 20px;
 }

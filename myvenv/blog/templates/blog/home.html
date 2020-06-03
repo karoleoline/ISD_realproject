@@ -24,10 +24,10 @@
 
      <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <div class="pagination">
+                <div class="pagination move">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                            <a href="?page={{ posts.previous_page_number }}">Previous</a>
+                          <a href="?page={{ posts.previous_page_number }}{% if request.GET.q %} &q={{ request.GET.q }}{% endif %}" class="move">Previous</a>
                         {% endif %}
 
                         <span class="current">
@@ -35,7 +35,7 @@
                         </span>
 
                         {% if posts.has_next %}
-                            <a href="?page={{ posts.next_page_number }}">Next</a>
+                          <a href="?page={{ posts.next_page_number }}{% if request.GET.q %} &q={{ request.GET.q }}{% endif %}" class="move">Next</a>
                         {% endif %}
                     </span>
                 </div>
