@@ -133,9 +133,16 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 
-# Email Settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+
+#Email Settings for form which is in the Contact Page
+#check it out below 3 links
+
+# myaccount.google.com/lesssecureapps
+# accounts.google.com/DisplayUnlockCaptcha
+# myaccount.google.com/apppasswords
+
+EMAIL_HOST = 'smtp.gmail.com' #email provider using here
+EMAIL_PORT = 587 #port for gmail
 EMAIL_HOST_USER = 'isd.project2020@gmail.com'
 EMAIL_HOST_PASSWORD = '1234qwer*ISDproject'
 EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
