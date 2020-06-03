@@ -46,9 +46,9 @@ No deployment planned
 
 ## Authors
 
-**Gabriela Tsvetanova** - *Initial work* - [GitHub](https://github.com/gtstevtanova)
-**Aksoy Kaan Dipioğlu ** - *Initial work* - [GitHub](https://github.com/KaanAksoy93)
-**Karoline Leo** - *Initial work* - [GitHub](https://github.com/karoleoline)
+* **Gabriela Tsvetanova** - *Initial work* - [GitHub](https://github.com/gtstevtanova)
+* **Aksoy Kaan Dipioğlu** - *Initial work* - [GitHub](https://github.com/KaanAksoy93)
+* **Karoline Leo** - *Initial work* - [GitHub](https://github.com/karoleoline)
 
 See also the list of [contributors](https://github.com/karoleoline/ISD_realproject/graphs/contributors) who participated in this project.
 
