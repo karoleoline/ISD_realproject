@@ -1,8 +1,14 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
+
+
 
 {% block content %}
-  <div class="content-section">
+  <img class="loginimgman" src="{% static 'effects/theman.png' %}"/>
+ <img class="loginimghood" src="{% static 'effects/neighborhood.png' %}"/>
+
+  <div class="content-section login">
       <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -15,6 +21,7 @@
       </form>
       <div class="border-top pt-3">
         <small class="text-muted">
-          Need an account first?<a class="ml-2" href="/register/">Register</a>
+          Need an account first?<a class="ml-2 reg" href="/register/">Register</a>
   </div>
+
 {% endblock content %}

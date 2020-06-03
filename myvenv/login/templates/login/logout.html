@@ -1,11 +1,15 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
 
 {% block content %}
-  <h2>Farewell, friend! You have been logged out.</h2>
-  <div class="border-top pt-3">
+
+  <h2 class="farewell">Farewell, friend! You have been logged out.</h2>
+  <div class="noborder">
     <small class="text-muted">
-        <a class="ml-2" href="{% url 'login' %}">Log in Again</a>
+    <img class="logout" src="{% static 'effects/bye.png' %}"/>
+        <a class="ml-2login" href="{% url 'login' %}">Log in Again</a>
     </small>
   </div>
 {% endblock content %}
+

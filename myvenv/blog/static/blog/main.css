@@ -557,7 +557,6 @@ a.ml-2login:hover {
 }
 
 
-
 a.move {
     color: teal;
     text-decoration: none;
@@ -628,8 +627,12 @@ a {
 a:hover{
     color: white;
     text-decoration: none;
+
 }
 
 .pagination.move {
     position: fixed;
 }
+=======
+}
+
