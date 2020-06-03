@@ -12,8 +12,8 @@ Please follow these instructions:
 First of all, a virtual environment has to be established
 Setup using command prompt
 
-1-make sure you are in related path in command prompt
-2-install a virtual environment
+* 1-make sure you are in related path in command prompt
+* 2-install a virtual environment
 
 ```
 pip install virtualenv
