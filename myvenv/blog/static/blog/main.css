@@ -21,7 +21,7 @@ a.nav-item.nav-linkbar {
 a.nav-item.nav-linkbar:hover {
     color: #ffffff;
     text-decoration: none;
-
+   
 }
 
 h1, h3, h4, h5, h6 {
@@ -59,15 +59,15 @@ ul {
 
 .content-section {
     background: #06213dbd;
-    padding: 15px 25px;
+    padding: 15px 20px;
     border-radius: 15px 30px;
     margin-bottom: 20px;
     float: left;
-    margin: 25px;
+    margin: 20px;
     height: 250px;
-    width: 240px;
-  }
+    width: 260px;
 }
+
 
 .article-title {
   color: #444444;
@@ -113,9 +113,7 @@ a.article-title:hover {
 }
 
 .account-heading {
-    font-size: 2.5rem;
-    text-align: left;
-    margin-left: 50px;
+  font-size: 2.5rem;
 }
 
 .mr-2 {
@@ -186,8 +184,7 @@ nav.navbar.navbar-expand-md.navbar-light.fixed-top.justify-content-between {
 }
 
 fieldset.form-group.regform {
-    width: 700px;
-
+    margin-top: 15px;
 }
 
 .border-bottom {
@@ -199,14 +196,13 @@ input#id_username, input#id_email, input#id_password1, input#id_password, input#
     border: black;
     border-radius: 20px;
     background-color: #0c988d;
-    margin-left: 20px;
 }
 
 .text-muted {
     color: #d9dbdc!important;
     text-align: left;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 .btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active, .show>.btn-outline-info.dropdown-toggle {
@@ -219,7 +215,7 @@ input#id_username, input#id_email, input#id_password1, input#id_password, input#
     color: #403b3b;
     background-color: #0c988d;
     border-color: #737373;
-
+   
 }
 
 
@@ -415,10 +411,11 @@ input.form-control.mr-sm-2 {
 .content-section.profile {
     width: -webkit-fill-available;
     height: auto;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 30px;
+    line-height: 30px;
 }
 
 .account-img {
@@ -455,7 +452,7 @@ a.ml-2.reg:hover {
 .media-body.editprofile {
     text-align: left;
     margin-left: -15%;
-
+   
 }
 
 a.text-secondary.edit {
@@ -506,7 +503,7 @@ a.btn.btn-danger.btn-sm.mt-1.mb-1.delete:hover, a.btn.btn-secondary.btn-sm.mt-1.
     color: #fff;
     background-color: #5a6268;
 
-}
+}   
 
 article.media.content-section.postdetail {
     width: auto;
@@ -549,7 +546,7 @@ a.btn.btn-primary.showmore {
 
 a.btn.btn-primary.showmore:hover {
     background: teal;
-    color: black;
+    
 }
 
 a.ml-2login:hover {
@@ -559,15 +556,16 @@ a.ml-2login:hover {
     border: 10px solid teal;
 }
 
-.pagination.move {
-    margin-top: 300px;
-    margin-left: -102px;
-    margin-bottom: 20px;
-    color: whitesmoke;
+.pagination {
+   
+    margin: 300px -100px 20px -20px;
+    list-style: none;
+    border-radius: .25rem;
 }
 
 a.move {
     color: teal;
+    text-decoration: none;
 }
 
 a.move:hover {
@@ -575,76 +573,64 @@ a.move:hover {
     text-decoration: none;
 }
 
-.col-form-label {
-    font-size: inherit;
-    line-height: 1.5;
-    margin-left: 25px;
-}
-
-
-label.col-form-label.requiredField {
-    display: flex;
-    margin-left: 20px;
-}
-
-div#div_id_email, div#div_id_image, div#div_id_last_name, div#div_id_username,div#div_id_first_name {
+h2.account-heading.username {
     text-align: left;
-    line-height: 50px;
-}
-
-a {
-    color: teal;
-    text-decoration: none;
-   }
-
-a:hover {
-    color: white;
-    text-decoration: none;
-   }
-
-p.text-secondary.text {
-    text-align: left;
-    margin-left: 50px;
+    margin-left: 30px;
     margin-top: 20px;
 }
 
-a.edit {
-    float: left;
-    margin-top: -40px;
-    margin-left: 235px;
-    background-color: aliceblue;
-    border: 2px solid;
-    border-radius: 10px;
-    padding: 4px;
+p.text-secondary.info {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+label.col-form-label.requiredField {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+div#div_id_first_name, div#div_id_last_name, div#div_id_email {
+    display: block;
+    text-align: left;
+    line-height: 60px;
+}
+
+input#id_image {
+    margin-top: 10px;
 }
 
 a.change {
-    float: left;
-    margin-top: -64px;
-    margin-left: 335px;
-    background-color: aliceblue;
-    border: 2px solid;
-    border-radius: 10px;
-    padding: 4px;
-}
-
-a.change:hover, a.edit:hover{
-    background-color: teal;
-    color: aliceblue;
+    margin-left: 100px;
+    margin-top: -52px;
+    display: block;
+    margin-bottom: 30px;
     text-decoration: none;
+    color: azure;
+    border: teal 1px solid;
+    width: 140px;
+    padding-left: 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-radius: 5px;
 }
 
-input[type="submit"] {
-    border-radius: 20px;
-    color: teal;
-    margin: 20px 160px;
+a.change:hover{
+    background-color: #0c988d;
 }
 
-input[type="submit"]:hover {
+h2.account-heading, .text-secondary {
+    margin-left: 60px
+}
+
+a {
+    color: #5c5c5d;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover{
     color: white;
-    background-color: teal;
-}
-
-input#id_email {
-    margin-left: 20px;
+    text-decoration: none;
 }
