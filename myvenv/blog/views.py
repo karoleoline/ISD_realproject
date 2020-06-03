@@ -46,7 +46,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
 		model = Post
 		fields = ['title', 'content']
-		
+
         #Getting current logged in user.Author can create a new post
 		def form_valid(self, form):
 			form.instance.author = self.request.user #take current user and set for new post
